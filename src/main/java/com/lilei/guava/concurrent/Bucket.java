@@ -31,6 +31,7 @@ public class Bucket {
     // 消费元素
     private final Monitor POLL_Monitor = new Monitor();
 
+    // 提交
     public void submit(Integer data) {
         // enterIf(Monitor.Guard guard): Enters this monitor if the guard is satisfied.
         if (OFFER_Monitor.enterIf(OFFER_Monitor.newGuard(() -> container.size() < BUCKET_LIMIT))) {
@@ -45,6 +46,7 @@ public class Bucket {
         }
     }
 
+    // 消费
     public void takeThenConsume(Consumer<Integer> consumer) {
         if (POLL_Monitor.enterIf(POLL_Monitor.newGuard(() -> !container.isEmpty()))) {
             try {
