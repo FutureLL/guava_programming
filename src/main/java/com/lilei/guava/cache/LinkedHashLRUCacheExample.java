@@ -1,7 +1,7 @@
 package com.lilei.guava.cache;
 
 /**
- * @description: 模拟LRU算法的测试类
+ * @description: 模拟LRU的测试类
  * @author: Mr.Li
  * @date: Created in 2019/12/18 12:53
  * @version: 1.0

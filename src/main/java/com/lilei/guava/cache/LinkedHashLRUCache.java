@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @description: LinkedHashMap 的方式实现Cache
+ * @description: LinkedHashMap的方式实现Cache
  * @author: Mr.Li
  * @date: Created in 2019/12/18 12:14
  * @version: 1.0
