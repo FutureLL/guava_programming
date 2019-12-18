@@ -1,7 +1,7 @@
 package com.lilei.guava.cache;
 
 /**
- * @description: 模拟LRU接口
+ * @description: 模拟LRU算法的接口
  * @author: Mr.Li
  * @date: Created in 2019/12/18 12:11
  * @version: 1.0
