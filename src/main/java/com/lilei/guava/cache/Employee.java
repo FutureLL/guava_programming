@@ -15,6 +15,9 @@ public class Employee {
     private final String dept;
     private final String empID;
 
+    // 假设JVM开辟128MB的堆内存,那么它能放多少Employee,肯定少于128的,因为Employee还有其他的一些属性也会占用内存
+    private final byte[] data = new byte[1024 * 1024];
+
     public Employee(String name, String dept, String empID) {
         this.name = name;
         this.dept = dept;
@@ -33,14 +36,17 @@ public class Employee {
         return empID;
     }
 
-
-
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .add("Name",this.getName())
-                .add("department",this.getDept())
-                .add("employeeID",this.getEmpID())
+                .add("Name", this.getName())
+                .add("department", this.getDept())
+                .add("employeeID", this.getEmpID())
                 .toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("The name " + getName() + " will be GC.");
     }
 }
