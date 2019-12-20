@@ -109,7 +109,7 @@ public class CacheLoaderTest3 {
         assertThat(result2.longValue() == result3.longValue(), equalTo(true));
     }
 
-    // 在启动Cache的时候就将数据进行加载
+    // 在启动Cache的时候就将数据进行加载,也称作: 预加载
     // 但是在这里有个漏洞,无论我的Value是什么都会转换成大写,这就存在了漏洞
     @Test
     public void testCachePreLoad() {
