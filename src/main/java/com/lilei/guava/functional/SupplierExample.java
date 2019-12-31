@@ -12,7 +12,7 @@ public class SupplierExample {
 
     public static void main(String[] args) throws InterruptedException {
         //每次get都会初始化
-        Supplier<String> supplier = new Supplier<>() {
+        Supplier<String> supplier = new Supplier<String>() {
             @Override
             public String get() {
                 System.out.println("init supplier wrapped object");
@@ -44,7 +44,7 @@ public class SupplierExample {
         System.out.println("------------------");
 
         //Lazy初始化,Supplier wrapped的对象只在第一次get时候会被初始化
-        Supplier<String> memoize = Suppliers.memoize(new Supplier<>() {
+        Supplier<String> memoize = Suppliers.memoize(new Supplier<String>() {
             @Override
             public String get() {
                 System.out.println("init supplier wrapped object");
@@ -59,7 +59,7 @@ public class SupplierExample {
         System.out.println("------------------");
 
         //Supplier wrapped对象只初始化一次
-        Supplier<String> memoizeOne = Suppliers.memoize(new Supplier<>() {
+        Supplier<String> memoizeOne = Suppliers.memoize(new Supplier<String>() {
             @Override
             public String get() {
                 System.out.println("init supplier wrapped object");
@@ -72,7 +72,7 @@ public class SupplierExample {
         System.out.println("------------------");
 
         //创建过期设置的Supplier对象，时间过期，get对象会重新初始化对象
-        Supplier<String> memoizeTime = Suppliers.memoizeWithExpiration(new Supplier<>() {
+        Supplier<String> memoizeTime = Suppliers.memoizeWithExpiration(new Supplier<String>() {
             @Override
             public String get() {
                 System.out.println("init supplier wrapped object");

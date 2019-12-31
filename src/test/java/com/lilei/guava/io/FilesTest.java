@@ -106,7 +106,7 @@ public class FilesTest {
          */
 
         //一行一行的读取,每读取一行都交给每行的行处理器LineProcessor
-        LineProcessor<List<Integer>> lineProcessor = new LineProcessor<>() {
+        LineProcessor<List<Integer>> lineProcessor = new LineProcessor<List<Integer>>() {
 
             private final List<Integer> lengthList = new ArrayList<>();
 

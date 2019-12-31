@@ -32,7 +32,7 @@ public class FunctionExample {
     }
 
     public static void main(String[] args) throws IOException {
-        Function<String, Integer> function = new Function<>() {
+        Function<String, Integer> function = new Function<String, Integer>() {
 
             @Nullable
             @Override

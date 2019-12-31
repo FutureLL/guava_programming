@@ -156,7 +156,7 @@ public class CacheLoaderTest {
     }
 
     private CacheLoader<String, Employee> createCacheLoader() {
-        return new CacheLoader<>() {
+        return new CacheLoader<String, Employee>() {
             @Override
             public Employee load(String name) throws Exception {
                 return findEmployeeByName(name, name + "Dept", name + "ID");
